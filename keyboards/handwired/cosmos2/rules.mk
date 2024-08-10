@@ -1,1 +1,1 @@
-SERIAL_DRIVER = vendor
+SERIAL_DRIVER = usart
