@@ -25,7 +25,9 @@
     "processor": "RP2040",
     "split": {
         "enabled": true,
-        "soft_serial_pin": "GP3",
+        "handedness": {
+            "pin": "GP4"
+        },
     },
     "layouts": {
         "LAYOUT": {
