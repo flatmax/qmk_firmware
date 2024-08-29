@@ -28,6 +28,12 @@
         "handedness": {
             "pin": "GP11"
         },
+        "matrix_pins": {
+          "right" : {
+            "cols": ["GP3", "GP4", "GP5", "GP6", "GP7", "GP8", "GP9", "GP10"],
+            "rows": ["GP29", "GP28", "GP27", "GP26", "GP15", "GP14"]
+          }
+        },
     },
     "layouts": {
         "LAYOUT": {
