@@ -1,1 +1,2 @@
 SERIAL_DRIVER = usart
+RAW_ENABLE = yes
