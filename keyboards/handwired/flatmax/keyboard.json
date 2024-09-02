@@ -19,19 +19,19 @@
         "vid": "0xF1A7"
     },
     "matrix_pins": {
-        "cols": ["GP10", "GP9", "GP8", "GP7", "GP6", "GP5", "GP4", "GP3"],
-        "rows": ["GP29", "GP28", "GP27", "GP26", "GP15", "GP14"]
+        "cols": ["GP10", "GP9", "GP8", "GP7", "GP6", "GP24", "GP4", "GP3"],
+        "rows": ["GP29", "GP28", "GP27", "GP10", "GP15", "GP14"]
     },
     "processor": "RP2040",
     "split": {
         "enabled": true,
         "handedness": {
-            "pin": "GP11"
+            "pin": "GP3"
         },
         "matrix_pins": {
           "right" : {
-            "cols": ["GP3", "GP4", "GP5", "GP6", "GP7", "GP8", "GP9", "GP10"],
-            "rows": ["GP29", "GP28", "GP27", "GP26", "GP15", "GP14"]
+            "cols": ["GP3", "GP4", "GP5", "GP6", "GP7", "GP24", "GP9", "GP10"],
+            "rows": ["GP29", "GP28", "GP27", "GP10", "GP15", "GP14"]
           }
         },
     },
