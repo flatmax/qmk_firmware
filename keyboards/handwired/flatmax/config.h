@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 /* Serial communication */
 #define SERIAL_USART_FULL_DUPLEX
 #define SERIAL_USART_TX_PIN GP0
