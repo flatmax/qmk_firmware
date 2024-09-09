@@ -16,6 +16,30 @@
 
 #include QMK_KEYBOARD_H
 
+// #ifdef CONSOLE_ENABLE
+// #include "print.h"
+// #endif
+//
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     #ifdef CONSOLE_ENABLE
+//         const bool is_combo = record->event.type == COMBO_EVENT;
+//         uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+//              keycode,
+//              is_combo ? 254 : record->event.key.row,
+//              is_combo ? 254 : record->event.key.col,
+//              get_highest_layer(layer_state),
+//              record->event.pressed,
+//              get_mods(),
+//              get_oneshot_mods(),
+//              record->tap.count
+//              );
+//     #endif
+//     switch (keycode) {
+//     //...
+//     }
+//     return true;
+// }
+
 enum layers {
   _BASELAYER,
   _CTL,
@@ -41,12 +65,12 @@ KC_NO, KC_NO, KC_NO, C(KC_LGUI), C(KC_LSFT), MO(_CTL_ALT), C(KC_SPC), KC_NO,  C(
 KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,  C(KC_HOME), C(KC_END),     KC_BSPC, KC_DEL,     KC_NO,       KC_NO,    KC_NO,   KC_NO, KC_NO, KC_NO
     ),
     [_ALT] = LAYOUT(
-    KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, A(KC_TAB), A(KC_Q), KC_7,   KC_8, KC_9, A(KC_T),         KC_NO,  KC_MINUS,     KC_BSLS,     S(KC_EQUAL),    KC_LBRC, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO,     A(KC_A), KC_4,   KC_5, KC_6, A(KC_G),         KC_NO,  S(KC_MINUS),      KC_QUOT,     KC_EQUAL,    KC_RBRC, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO,  MO(_CTL_ALT),     A(KC_Z), KC_1,	  KC_2, KC_3, A(KC_B), KC_NO,   KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_0,  KC_LSFT, KC_NO,A(KC_SPC), KC_NO,                A(KC_ENTER), A(KC_SPC), KC_LSFT, S(KC_9), S(KC_0), KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,  A(KC_HOME), A(KC_END),  KC_BSPC, KC_DEL, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+    KC_NO, KC_NO, KC_NO,        KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, A(KC_TAB),    A(KC_Q), KC_7,   KC_8, KC_9, A(KC_T),         KC_NO,  KC_MINUS,     KC_BSLS,     S(KC_EQUAL),    KC_LBRC, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO,        A(KC_A), KC_4,  KC_5, KC_6, A(KC_G),         KC_NO,  S(KC_MINUS),      KC_QUOT,     KC_EQUAL,    KC_RBRC, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, MO(_CTL_ALT), A(KC_Z), KC_1,	KC_2, KC_3, A(KC_B), A(KC_LEFT),   KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_0,  A(KC_LSFT), KC_NO, A(KC_SPC), KC_NO,                A(KC_ENTER), A(KC_SPC), KC_LSFT, S(KC_9), S(KC_0), KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, A(KC_HOME), A(KC_END),  KC_BSPC, KC_DEL, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
     ),
     [_CTL_ALT] = LAYOUT(
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
