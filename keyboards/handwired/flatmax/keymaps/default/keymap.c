@@ -66,8 +66,8 @@ KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,  C(KC_HOME), C(KC_END),     KC
     ),
     [_ALT] = LAYOUT(
     KC_NO, KC_NO, KC_NO,        KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, A(KC_TAB),    A(KC_Q), KC_7,   KC_8, KC_9, A(KC_T),         KC_LBRC,  KC_MINUS,     KC_BSLS,     S(KC_EQUAL),    KC_RBRC, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO,        A(KC_A), KC_4,  KC_5, KC_6, A(KC_G),         S(KC_9),  S(KC_MINUS),      KC_QUOT,     KC_EQUAL,    S(KC_0), KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, A(KC_TAB),    A(KC_Q), KC_7,   KC_8, KC_9, A(KC_T),         S(KC_LBRC),  KC_MINUS,     KC_BSLS,     S(KC_EQUAL),    S(KC_RBRC), KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO,        A(KC_A), KC_4,  KC_5, KC_6, A(KC_G),         KC_LBRC,  S(KC_MINUS),      KC_QUOT,     KC_EQUAL,    KC_RBRC, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, _______, A(KC_Z), KC_1,	KC_2, KC_3, A(KC_B), A(KC_LEFT),   KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_0,  A(KC_LSFT), _______, A(KC_SPC), KC_NO,                A(KC_ENTER), A(KC_SPC), A(KC_LSFT), S(KC_9), S(KC_0), KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, A(KC_HOME), A(KC_END),  KC_BSPC, KC_DEL, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
