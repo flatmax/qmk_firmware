@@ -40,6 +40,14 @@
 //     return true;
 // }
 
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//   // If console is enabled, it will print the matrix position and status of each key pressed
+// #ifdef CONSOLE_ENABLE
+//     uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
+// #endif
+//   return true;
+// }
+
 enum layers {
   _BASELAYER,
   _CTL,
@@ -49,36 +57,32 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASELAYER] = LAYOUT(
-KC_NO, KC_ESC, KC_GRAVE, KC_1,	  KC_2,    KC_3,    KC_4,    KC_5,       KC_6,       KC_7,    KC_8,     KC_9,    KC_0,    KC_MINUS, KC_EQUAL, QK_BOOT,
-KC_NO, KC_F3,  KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,       KC_U,    KC_I,     KC_O,    KC_P,    KC_LBRC,  KC_RBRC,  KC_BSLS,
-KC_NO, KC_NO,  KC_CAPS,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,       KC_J,    KC_K,     KC_L,    KC_SCLN, KC_QUOT,  KC_NO,    KC_PSCR,
-KC_NO, KC_NO,  MO(_CTL), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,       KC_M,    KC_COMM,  KC_DOT,  KC_SLSH, KC_NO,  KC_NO,  KC_NO,
-KC_NO, KC_NO,  KC_NO,    KC_LGUI, KC_LSFT, MO(_ALT), KC_SPC,  QK_BOOT,    KC_ENTER,  KC_SPC, KC_LSFT, KC_PGUP, KC_PGDN, KC_NO,  KC_NO,    KC_NO,
-KC_NO, KC_NO,  KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_HOME, KC_END,     KC_BSPC,    KC_DEL, KC_NO,    KC_NO,   KC_NO,   KC_NO, KC_NO,    KC_NO
+KC_GRAVE, KC_Q,     KC_W,    KC_E,    KC_R,    KC_T,      KC_Y,       KC_U,    KC_I,     KC_O,    KC_P,    KC_ESC,
+KC_TAB,   KC_A,     KC_S,    KC_D,    KC_F,    KC_G,      KC_H,       KC_J,    KC_K,     KC_L,    KC_SCLN, KC_F3,
+MO(_CTL), KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,      KC_N,       KC_M,    KC_COMM,  KC_DOT,  KC_SLSH, QK_BOOT,
+KC_NO,    MO(_ALT), KC_LGUI, KC_LSFT, KC_SPC,  QK_BOOT,   KC_ENTER,   KC_SPC,  KC_PGUP, KC_PGDN,  KC_LSFT, KC_NO,
+KC_NO,    KC_NO,    KC_NO,   KC_NO,   KC_HOME, KC_END,    KC_BSPC,    KC_DEL,  KC_NO,    KC_NO,   KC_NO,   KC_NO
     ),
     [_CTL] = LAYOUT(
-KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,           KC_NO,  KC_NO,        KC_NO,       KC_NO, KC_NO,   KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, C(KC_TAB), C(KC_Q), C(KC_W), C(KC_E), C(KC_R), C(KC_T),         C(KC_Y), C(KC_U),    C(KC_I),     C(KC_O),  C(KC_P), KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO,     C(KC_A), C(KC_S), C(KC_D), C(KC_F), C(KC_G),         C(KC_H), C(KC_J), C(KC_K),    C(KC_L),    C(KC_SCLN),   KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, _______,     C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_B),         C(KC_SLSH), C(KC_LEFT), C(KC_UP), C(KC_DOWN), C(KC_RIGHT),   KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO, C(KC_LGUI), C(KC_LSFT), _______, C(KC_SPC), KC_NO,  C(KC_ENTER), C(KC_SPC), KC_LSFT, C(KC_PGUP),    C(KC_PGDN),   KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,  C(KC_HOME), C(KC_END),     KC_BSPC, KC_DEL,     KC_NO,       KC_NO,    KC_NO,   KC_NO, KC_NO, KC_NO
+KC_NO, C(KC_Q), C(KC_W), C(KC_E), C(KC_R), C(KC_T),      C(KC_Y),     C(KC_U),    C(KC_I),  C(KC_O),    C(KC_P),     KC_NO,
+C(KC_TAB),     C(KC_A), C(KC_S), C(KC_D), C(KC_F), C(KC_G),      C(KC_H),     C(KC_J),    C(KC_K),  C(KC_L),    C(KC_SCLN),  KC_NO,
+_______,     C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_B),    C(KC_SLSH),  C(KC_LEFT), C(KC_UP), C(KC_DOWN), C(KC_RIGHT), KC_NO,
+KC_NO, _______, C(KC_LGUI), C(KC_LSFT), C(KC_SPC), KC_NO,    C(KC_ENTER), C(KC_SPC),  C(KC_PGUP), C(KC_PGDN),  KC_LSFT,  KC_NO,
+KC_NO,     KC_NO,   KC_NO,   KC_NO,  C(KC_HOME), C(KC_END),  KC_BSPC,     KC_DEL,     KC_NO,    KC_NO,      KC_NO,       KC_NO
     ),
     [_ALT] = LAYOUT(
-    KC_NO, KC_NO, KC_NO,        KC_NO,   KC_NO,  KC_NO, KC_NO, KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, A(KC_TAB),    A(KC_Q), KC_7,   KC_8, KC_9, A(KC_T),         S(KC_LBRC),  KC_MINUS,     KC_BSLS,     S(KC_EQUAL),    S(KC_RBRC), KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO,        A(KC_A), KC_4,  KC_5, KC_6, A(KC_G),         KC_LBRC,  S(KC_MINUS),      KC_QUOT,     KC_EQUAL,    KC_RBRC, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, _______, A(KC_Z), KC_1,	KC_2, KC_3, A(KC_B), A(KC_LEFT),   KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_0,  A(KC_LSFT), _______, A(KC_SPC), KC_NO,                A(KC_ENTER), A(KC_SPC), A(KC_LSFT), S(KC_9), S(KC_0), KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO, A(KC_HOME), A(KC_END),  KC_BSPC, KC_DEL, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+    KC_NO,  A(KC_Q), KC_7,       KC_8,    KC_9,       A(KC_T),     S(KC_LBRC),  KC_MINUS,    KC_BSLS,    S(KC_EQUAL), S(KC_RBRC), KC_NO,
+    A(KC_TAB),      A(KC_A), KC_4,       KC_5,    KC_6,       A(KC_G),     KC_LBRC,     S(KC_MINUS), KC_QUOT,    KC_EQUAL,    KC_RBRC,    KC_NO,
+    _______,    A(KC_Z), KC_1,	     KC_2,    KC_3,       A(KC_B),     A(KC_LEFT),  KC_LEFT,     KC_UP,      KC_DOWN,     KC_RIGHT,   KC_NO,
+    KC_NO, _______,      KC_0,    A(KC_LSFT), A(KC_SPC),  KC_NO,       A(KC_ENTER), A(KC_SPC), S(KC_9),     S(KC_0),   A(KC_LSFT),    KC_NO,
+    KC_NO,      KC_NO,   KC_NO,      KC_NO,   A(KC_HOME), A(KC_END),   KC_BSPC,     KC_DEL,      KC_NO,      KC_NO,       KC_NO,      KC_NO
     ),
     [_CTL_ALT] = LAYOUT(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, C(A(KC_T)),     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, C(A(KC_LEFT)), C(A(KC_UP)), C(A(KC_DOWN)), C(A(KC_RIGHT)), KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_LSFT, _______, KC_NO, KC_NO,   KC_NO, KC_NO,         KC_LSFT,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,       KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO
+    KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO, C(A(KC_T)),   KC_NO, KC_NO,         KC_NO,       KC_NO,         KC_NO,          KC_NO,
+    KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,        KC_NO, KC_NO,         KC_NO,       KC_NO,         KC_NO,          KC_NO,
+    _______, KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,        KC_NO, C(A(KC_LEFT)), C(A(KC_UP)), C(A(KC_DOWN)), C(A(KC_RIGHT)), KC_NO,
+    KC_NO, _______,   KC_NO, KC_LSFT, KC_NO, KC_NO,        KC_NO, KC_NO,     KC_NO,         KC_NO,         KC_LSFT,          KC_NO,
+    KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,        KC_NO, KC_NO,         KC_NO,       KC_NO,         KC_NO,          KC_NO
     )
 };
 
