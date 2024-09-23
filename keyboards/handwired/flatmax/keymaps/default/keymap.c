@@ -77,7 +77,7 @@ KC_NO, KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,  C(KC_HOME), C(KC_END),     KC
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, C(A(KC_T)),     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,         KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, C(A(KC_LEFT)), C(A(KC_UP)), C(A(KC_DOWN)), C(A(KC_RIGHT)), KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_LSFT, _______, KC_NO, KC_NO,   KC_NO, KC_NO,         KC_LSFT,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, _______, _______, KC_NO, KC_NO,   KC_NO, KC_NO,     KC_LSFT,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,       KC_NO,         KC_NO,           KC_NO, KC_NO, KC_NO, KC_NO
     )
 };
