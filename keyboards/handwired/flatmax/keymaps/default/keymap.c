@@ -16,29 +16,29 @@
 
 #include QMK_KEYBOARD_H
 
-// #ifdef CONSOLE_ENABLE
-// #include "print.h"
-// #endif
-//
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     #ifdef CONSOLE_ENABLE
-//         const bool is_combo = record->event.type == COMBO_EVENT;
-//         uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
-//              keycode,
-//              is_combo ? 254 : record->event.key.row,
-//              is_combo ? 254 : record->event.key.col,
-//              get_highest_layer(layer_state),
-//              record->event.pressed,
-//              get_mods(),
-//              get_oneshot_mods(),
-//              record->tap.count
-//              );
-//     #endif
-//     switch (keycode) {
-//     //...
-//     }
-//     return true;
-// }
+#ifdef CONSOLE_ENABLE
+#include "print.h"
+#endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    #ifdef CONSOLE_ENABLE
+        const bool is_combo = record->event.type == COMBO_EVENT;
+        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+             keycode,
+             is_combo ? 254 : record->event.key.row,
+             is_combo ? 254 : record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
+    switch (keycode) {
+    //...
+    }
+    return true;
+}
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //   // If console is enabled, it will print the matrix position and status of each key pressed
@@ -65,7 +65,7 @@ KC_NO,    KC_NO,    KC_NO,   KC_NO,   KC_NO,       KC_NO,               KC_NO,  
     [_LAYER1] = LAYOUT(
 QK_BOOT, _______, KC_7,    KC_8,  KC_9,     _______,        S(KC_LBRC),  KC_MINUS,    KC_BSLS, S(KC_EQUAL), S(KC_RBRC), QK_BOOT,
 _______, _______, KC_4,    KC_5,  KC_6,     KC_HOME,        KC_LBRC,     S(KC_MINUS), KC_QUOT, KC_EQUAL,    KC_RBRC,    KC_NO,
-_______, _______, KC_1,	   KC_2,  KC_3,     KC_END,         _______,     KC_LEFT,     KC_UP,   KC_DOWN,     KC_RIGHT,   KC_NO,
+_______, _______, KC_1,	   KC_2,  KC_3,     KC_END,         _______,     KC_LEFT,     KC_UP,   KC_DOWN,     KC_RIGHT,   KC_F2,
 KC_NO,   _______, _______, KC_0,  _______,  KC_DEL,         _______,     _______,     S(KC_9), S(KC_0),     _______,    KC_NO,
 KC_NO,   KC_NO,   KC_NO,   KC_NO, _______,  _______,        _______,     _______,     KC_NO,   KC_NO,       KC_NO,      KC_NO
     )
