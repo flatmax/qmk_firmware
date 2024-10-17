@@ -30,6 +30,14 @@
         "handedness": {
             "pin": "GP4"
         },
+        "matrix_pins": {
+          "right" : {
+            "direct": [["GP9", "GP11", "GP17", "GP21", "GP22", "GP29"],
+                       ["GP8", "GP12", "GP16", "GP20", "GP23", "GP28"],
+                       ["GP6", "GP13", "GP14", "GP18", "GP25", "GP26"],
+                       ["GP2", "GP3", "GP15", "GP19", "GP7", "GP27"]]
+          }
+        }
     },
     "layouts": {
         "LAYOUT": {
