@@ -60,7 +60,7 @@ KC_GRAVE, KC_Q,     KC_W,    KC_E,    KC_R,        KC_T,                KC_Y,   
 KC_TAB,   KC_A,     KC_S,    KC_D,    KC_F,        KC_G,                KC_H,       KC_J,    KC_K,    KC_L,    KC_SCLN, KC_PSCR,
 KC_LCTL,  KC_Z,     KC_X,    KC_C,    KC_V,        KC_B,                KC_N,       KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_F3,
 KC_NO,    KC_LALT,  KC_LGUI, KC_LSFT, MO(_LAYER1), KC_BSPC,             KC_ENTER,   KC_SPC,  KC_PGUP, KC_PGDN, KC_LSFT, KC_NO,
-KC_NO,    KC_NO,    KC_NO,   KC_NO,   KC_NO,       KC_NO,               KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+KC_NO,    KC_NO,    KC_NO,   KC_NO,   KC_HOME,       KC_END,               KC_BSPC,      KC_DEL,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
     [_LAYER1] = LAYOUT(
 QK_BOOT, _______, KC_7,    KC_8,  KC_9,     _______,        S(KC_LBRC),  KC_MINUS,    KC_BSLS, S(KC_EQUAL), S(KC_RBRC), QK_BOOT,
